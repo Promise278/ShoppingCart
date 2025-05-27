@@ -17,9 +17,11 @@
   });
 
   let items = document.getElementById("storage");
-  let search = document.getElementById("searchbar")
-  let cartCountDisplay = document.getElementById("cartCount");
-  let allProducts = [];
+  let search = document.getElementById("searchbar").value;
+  let cartcount = document.getElementById("cartCount");
+  let searchbtn = document.getElementById("searchbtn");
+  let cart = document.getElementById("cart");
+  
 
   fetch("https://fakestoreapi.com/products").then((res) => res.json()).then((data) => {
     console.log(data)
@@ -28,7 +30,7 @@
       card.className =
         "bg-slate-500 rounded-lg shadow-md overflow-hidden flex flex-col p-4 ml-8 mr-8";
       card.innerHTML = `
-        <img src="${product.image}" alt="${product.title}" class="h-48 mb-4" />
+        <img src="${product.image}" alt="${product.title}" class=" mb-4 aspect-square" />
         <h3 class="text-md font-semibold mb-1">${product.title}</h3>
         <p class="text-sm text-white mb-2">${product.description}...</p>
         <p class="text-lg text-green-500 font-bold mb-4">$${product.price}</p>
@@ -44,11 +46,22 @@
         </button>
       `;
       items.appendChild(card);
-    });
+
+      let btn = card.querySelector(".add-to-cart")
+  
+      btn.addEventListener("click", (e) => {
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("hello world");
+      });
+      storage.appendChild(card)
+    });    
   });
 
-let addToCartBtn = card.querySelector(".add-to-cart");
-  addToCartBtn.addEventListener("click", () => {
-    cartCount++;
-    cartCountDisplay.forEach(el => el.textContent = cartCount);
-  });
+  
+  
+  searchbtn.filter(() => {
+    if (product.title === search) {
+      console.log(items)
+    }
+  })
