@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="img/shopeasy-favicon.png" type="image/x-icon">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      rel="shortcut icon"
+      href="img/shopeasy-favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <nav
       class="bg-gray-800 text-white md:gap-6 gap-0 flex items-center px-6 py-3 h-20"
     >
       <div class="text-3xl font-bold cursor-pointer">ShopEasy</div>
 
       <div class="ml-8 space-x-6 md:flex hidden">
-        <a href="index.html" class="hover:bg-gray-700 px-3 py-1 rounded">Home</a>
+        <a href="index.html" class="hover:bg-gray-700 px-3 py-1 rounded"
+          >Home</a
+        >
         <a href="#footer" class="hover:bg-gray-700 px-3 py-1 rounded">About</a>
         <a href="#" class="hover:bg-gray-700 px-3 py-1 rounded">Product</a>
         <a href="#" class="hover:bg-gray-700 px-3 py-1 rounded">Contact</a>
@@ -27,14 +40,14 @@
           placeholder="Search items..."
           class="w-full pl-3 pr-10 py-2 rounded-md text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
         />
-        <span id="searchbtn"
+        <span
+          id="searchbtn"
           class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer text-sm"
         >
           🔍
         </span>
       </div>
 
-      <!-- Cart -->
       <a href="components/cart.html">
         <div class="relative cursor-pointer md:flex hidden">
           <span id="cart" class="text-5xl">🛒</span>
@@ -118,31 +131,12 @@
         </div>
       </div>
 
-      <a href="/components//login.html">
-        <div
-          class="w-24 h-10 md:flex hidden rounded-md border-2 border-slate-350 text-white items-center justify-center font-bold text-sm cursor-pointer hover:scale-105 transition duration-200"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#FFFFFF"
-          >
-            <path
-              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"
-            />
-          </svg>
-          <p class="text-sm">Logout</p>
-        </div>
-      </a>
 
-      <!-- Side Nav (including the close icon inside it) -->
       <div
         id="navLinks"
         class="fixed top-0 right-0 h-full w-2/3 bg-gray-800 text-white transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col space-y-4 px-6 py-10 md:hidden z-50"
       >
-        <!-- Close Icon Inside SideNav -->
+
         <div class="flex justify-end mb-4">
           <svg
             id="closeIcon"
@@ -160,7 +154,6 @@
           </svg>
         </div>
 
-        <!-- Nav Links -->
         <a href="#" class="hover:bg-gray-700 px-3 py-2 rounded">Home</a>
         <a href="#" class="hover:bg-gray-700 px-3 py-2 rounded">About</a>
 
@@ -174,7 +167,6 @@
         </div>
       </div>
 
-      <!-- Menu Icon OUTSIDE the nav, stays in top nav bar -->
       <svg
         id="menuIcon"
         class="md:hidden h-8 w-8 cursor-pointer ml-3"
@@ -191,6 +183,89 @@
       </svg>
     </nav>
     <div
+      class="mt-12 pt-8 px-4 w-full max-w-xl mx-auto shadow-md shadow-amber-500 rounded-md"
+    >
+      <label
+        class="text-xl sm:text-2xl font-bold text-blue-500 pt-4 block"
+        for="id"
+        >Id</label
+      >
+      <input
+        id="id"
+        placeholder="Enter Id..."
+        type="text"
+        class="h-10 w-full border mt-2 p-2 focus:outline-none focus:ring focus:ring-blue-300 rounded-md"
+      />
+
+      <label
+        class="text-xl sm:text-2xl font-bold text-blue-500 pt-6 block"
+        for="userId"
+        >Title</label
+      >
+      <input
+        id="title"
+        placeholder="Enter UserId..."
+        type="text"
+        class="h-10 w-full border mt-2 p-2 focus:outline-none focus:ring focus:ring-blue-300 rounded-md"
+      />
+
+      <label
+        class="text-xl sm:text-2xl font-bold text-blue-500 pt-6 block"
+        for="products"
+        >Category</label
+      >
+      <input
+        id="category"
+        placeholder="Enter Product..."
+        type="text"
+        class="h-10 w-full border mt-2 p-2 mb-5 focus:outline-none focus:ring focus:ring-blue-300 rounded-md"
+      />
+
+      <label
+        class="text-xl sm:text-2xl font-bold text-blue-500 pt-6 block"
+        for="products"
+        >Description</label
+      >
+      <input
+        id="description"
+        placeholder="Enter Product..."
+        type="text"
+        class="h-10 w-full border mt-2 p-2 mb-5 focus:outline-none focus:ring focus:ring-blue-300 rounded-md"
+      />
+
+      <label
+        class="text-xl sm:text-2xl font-bold text-blue-500 pt-6 block"
+        for="products"
+        >Price</label
+      >
+      <input
+        id="price"
+        placeholder="Enter Product..."
+        type="number"
+        class="h-10 w-full border mt-2 p-2 mb-5 focus:outline-none focus:ring focus:ring-blue-300 rounded-md"
+      />
+
+      <label
+        class="text-xl sm:text-2xl font-bold text-blue-500 pt-6 block"
+        for="image"
+        >Image</label
+      >
+      <input
+        id="file"
+        type="file"
+        class="h-10 w-full border mt-2 p-2 mb-5 focus:outline-none focus:ring focus:ring-blue-300 rounded-md"
+      />
+
+      <div class="flex justify-end">
+        <button
+          id="btn"
+          class="mt-4 rounded-md shadow-md bg-blue-600 h-10 w-24 text-white mb-4 hover:bg-blue-300"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+    <div
       id="storage"
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-14"
     ></div>
@@ -198,7 +273,7 @@
       <div
         class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
       >
-        <!-- About Section -->
+
         <div>
           <h2 class="text-xl font-semibold mb-4">About Us</h2>
           <p class="text-sm text-gray-400">
@@ -207,7 +282,6 @@
           </p>
         </div>
 
-        <!-- Links -->
         <div>
           <h2 class="text-xl font-semibold mb-4">Quick Links</h2>
           <ul class="space-y-2 text-sm text-gray-300">
@@ -218,7 +292,6 @@
           </ul>
         </div>
 
-        <!-- Social Media -->
         <div>
           <h2 class="text-xl font-semibold mb-4">Follow Us</h2>
           <div class="flex space-x-4">
@@ -259,6 +332,50 @@
         © 2025 YourStore. All rights reserved.
       </div>
     </footer>
-<!-- <script src="/js/script.js"></script> -->
-</body>
+    <script>
+      let btn = document.getElementById("btn");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let id = document.getElementById("id").value;
+        let title = document.getElementById("title").value;
+        let file = document.getElementById("file").value;
+        let price = document.getElementById("price").value;
+        let description = document.getElementById("description").value;
+        let category = document.getElementById("category").value;
+        let userId = 1;
+
+        let newItem = {
+          id,
+          userId,
+          title,
+          file,
+          price,
+          description,
+          category,
+        };
+
+        let cart = JSON.parse(localStorage.getItem("CartItems")) || [];
+
+        cart.push(newItem);
+
+        localStorage.setItem("CartItems", JSON.stringify(cart));
+
+        fetch("https://fakestoreapi.com/carts", {
+          method: "POST",
+          headers: {
+            Accept: "*/*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newItem),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("Success:", data);
+            toastr.success("Cart submitted successfully!");
+          });
+      });
+    </script>
+  </body>
 </html>

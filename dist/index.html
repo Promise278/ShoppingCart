@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="style.css" /> -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link
       rel="shortcut icon"
       href="img/shopeasy-favicon.png"
@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav
-      class="bg-gray-800 text-white md:gap-6 gap-0 flex items-center md:px-6 px-2 py-3 h-20"
+      class="bg-gray-800 text-white md:gap-5 gap-0 flex items-center md:px-6 px-2 py-3 h-20"
     >
       <a href="index.html">
         <div class="md:text-3xl text-1xl font-bold cursor-pointer">
@@ -32,19 +32,6 @@
         >
         <a href="#" class="hover:bg-gray-700 px-3 py-1 rounded">Contact</a>
       </div>
-      <!-- <div class="w-full md:w-auto flex-1 mt-2 md:mt-0 md:mx-6 relative md:ml-0 ml-3">
-        <input
-          id="searchbar"
-          type="search"
-          placeholder="Search items..."
-          class="md:w-full w-3/4 pl-3 pr-10 py-2 rounded-md text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        />
-        <span id="searchbtn"
-          class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer text-sm"
-        >
-          🔍
-        </span>
-      </div> -->
       <div
         class="w-full flex items-center justify-center px-4 mt-2 md:mt-0 md:mx-6 relative"
       >
@@ -62,7 +49,6 @@
         </span>
       </div>
 
-      <!-- Cart -->
       <a href="cart.html">
         <div class="relative cursor-pointer md:flex hidden">
           <span id="cart" class="text-5xl">🛒</span>
@@ -90,7 +76,7 @@
           </svg>
         </div>
         <div
-          class="absolute left-1/2 -translate-x-1/2 z-50 hidden group-hover:block bg-white text-gray-800 mt-2 rounded-md shadow-lg w-44"
+          class="absolute left-1/2 mr-28 -translate-x-1/2 z-50 hidden group-hover:block bg-white text-gray-800 mt-2 rounded-md shadow-lg w-32"
         >
           <ul class="text-sm p-2">
             <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
@@ -100,7 +86,7 @@
             <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
               My Orders
             </li>
-            <a href="/components/login.html">
+            <a href="">
               <li
                 class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-600"
               >
@@ -146,31 +132,12 @@
         </div>
       </div>
 
-      <a href="/components//login.html">
-        <div
-          class="w-24 h-10 md:flex hidden rounded-md border-2 border-slate-350 text-white items-center justify-center font-bold text-sm cursor-pointer hover:scale-105 transition duration-200"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#FFFFFF"
-          >
-            <path
-              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"
-            />
-          </svg>
-          <p class="text-sm">Logout</p>
-        </div>
-      </a>
 
-      <!-- Side Nav (including the close icon inside it) -->
       <div
         id="navLinks"
         class="fixed top-0 right-0 h-full w-2/3 bg-gray-800 text-white transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col space-y-4 px-6 py-10 md:hidden z-50"
       >
-        <!-- Close Icon Inside SideNav -->
+
         <div class="flex justify-end mb-4">
           <svg
             id="closeIcon"
@@ -188,23 +155,23 @@
           </svg>
         </div>
 
-        <!-- Nav Links -->
         <a href="index.html" class="hover:bg-gray-700 px-3 py-2 rounded"
           >Home</a
         >
         <a href="#footer" class="hover:bg-gray-700 px-3 py-2 rounded">About</a>
 
-        <div class="relative cursor-pointer">
-          <span class="text-5xl">🛒</span>
-          <span
-            id="cartCount"
-            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full px-2"
-            >0</span
-          >
-        </div>
+        <a href="cart.html">
+          <div class="relative cursor-pointer">
+            <span class="text-5xl">🛒</span>
+            <span
+              id="cartCount"
+              class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full px-2"
+              >0</span
+            >
+          </div>
+        </a>
       </div>
 
-      <!-- Menu Icon OUTSIDE the nav, stays in top nav bar -->
       <svg
         id="menuIcon"
         class="md:hidden h-8 w-8 cursor-pointer ml-3"
@@ -228,7 +195,7 @@
       <div
         class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
       >
-        <!-- About Section -->
+
         <div>
           <h2 class="text-xl font-semibold mb-4">About Us</h2>
           <p class="text-sm text-gray-400">
@@ -237,7 +204,6 @@
           </p>
         </div>
 
-        <!-- Links -->
         <div>
           <h2 class="text-xl font-semibold mb-4">Quick Links</h2>
           <ul class="space-y-2 text-sm text-gray-300">
@@ -248,7 +214,7 @@
           </ul>
         </div>
 
-        <!-- Social Media -->
+
         <div>
           <h2 class="text-xl font-semibold mb-4">Follow Us</h2>
           <div class="flex space-x-4">

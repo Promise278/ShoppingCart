@@ -15,6 +15,7 @@
     closeIcon.classList.add("hidden");
     menuIcon.classList.remove("hidden");
   });
+  
 
   let items = document.getElementById("storage");
   let search = document.getElementById("searchbar").value;
@@ -41,7 +42,7 @@
             <button class="increase bg-gray-300 px-2 py-1 rounded text-lg">+</button>
           </div>
         </div>
-        <button class="add-to-cart mt-auto bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded font-semibold">
+        <button class="add-to-cart mt-auto bg-yellow-500 md:hover:bg-yellow-600 text-white py-2 rounded font-semibold">
           Add to Cart
         </button>
       `;
@@ -50,18 +51,10 @@
       let btn = card.querySelector(".add-to-cart")
   
       btn.addEventListener("click", (e) => {
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert("hello world");
+        let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+          cartItems.push(product);
+          localStorage.setItem("cart", JSON.stringify(cartItems));
+        navLinks.appendChild(card)
       });
-      storage.appendChild(card)
     });    
   });
-
-  
-  
-  searchbtn.filter(() => {
-    if (product.title === search) {
-      console.log(items)
-    }
-  })
